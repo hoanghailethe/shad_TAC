@@ -17,6 +17,7 @@
     --popover-foreground: 240 10% 3.9%;
  
     --primary: 240 5.9% 10%;
+    
     --primary-foreground: 0 0% 98%;
  
     --secondary: 240 4.8% 95.9%;
@@ -92,13 +93,13 @@
   }
 
   .input {
-    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-primary max-sm:rounded-full;
   }
 }
 
 @layer utilities {
   .padding {
-    @apply sm:px-16 px-8 sm:py-24 py-12;
+    @apply sm:px-12 px-8 sm:py-12 py-8;
   }
 
   .padding-x {
@@ -127,5 +128,9 @@
 
   .info-text {
     @apply font-montserrat text-slate-gray text-lg leading-7;
+  }
+
+  .text-slate-gray{
+    @apply text-black
   }
 }

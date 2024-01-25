@@ -1,24 +1,22 @@
 const HeroCarousel = () => {
 	return (
-		<div className="relative h-screen w-full bg-cover bg-center bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] ">
+		<div className="relative h-screen w-full bg-cover bg-center 
+			flex justify-start items-center
+			bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] ">
 			{/* Background Image Carousel (You'll need to implement this logic separately) */}
 			{/* Example: <div id="carousel" className="carousel"> ... </div> */}
-
-			{/* Rectangle Ladder Shape Overlay */}
-			<div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center">
-				<div className="w-30 h-full bg-white opacity-50 transform -skew-y-6">
-					
-				</div>
-
-                {/* Text Overlaid on Top */}
-					<div className="text-orange text-center z-10">
-						<h1 className="text-4xl font-bold"> Title</h1>
-						<p className="mt-2">
-							Some descriptive text{" "}
-							<span className="text-orange">with an accent</span>
-						</p>
-					</div>
+			{/* Text Overlaid on Top */}
+			<div className="text-orange text-center z-10 padding">
+				<h1 className="text-4xl font-bold"> Title</h1>
+				<p className="mt-2">
+					Some descriptive text{" "}
+					<span className="text-orange">with an accent</span>
+				</p>
 			</div>
+			{/* Rectangle Ladder Shape Overlay */}
+			<div className="absolute top-0 left-0 w-full opacity-45 h-full 
+			 bg-gradient-to-r from-green-300 to-slate-100
+			 flex flex-col justify-center items-center"></div>
 		</div>
 
 		// CHOICE 2
