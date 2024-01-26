@@ -1,23 +1,76 @@
+'use client'
+
+import * as React from "react"
+
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+
+const carouselHeroes = [
+	{
+		id:1 ,
+		img_url :'https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+		text1: 'HEADLINE',
+		text2: 'More detal, lorem sum'
+	},
+	{
+		id:2 ,
+		img_url :'https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80',
+		text1: 'HEADLINE',
+		text2: 'More detal, lorem sum'
+	},
+
+
+]
+//over layer: https://blog.logrocket.com/guide-image-overlays-css/
 const HeroCarousel = () => {
+	const plugin = React.useRef(
+		Autoplay({ delay: 10000, stopOnInteraction: true })
+	  )
+
 	return (
-		<div className="relative h-screen w-full bg-cover bg-center 
-			flex justify-start items-center
-			bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] ">
+		<div className="relative h-[80vh] w-full bg-cover bg-center
+			flex justify-start items-center"
+			// bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)]"	
+			>
 			{/* Background Image Carousel (You'll need to implement this logic separately) */}
 			{/* Example: <div id="carousel" className="carousel"> ... </div> */}
 			{/* Text Overlaid on Top */}
-			<div className="text-orange text-center z-10 padding">
-				<h1 className="text-4xl font-bold"> Title</h1>
+			<div className="text-white text-center padding md:pl-200 md:ml-[200px] z-20">
+				<h1 className="text-4xl font-bold "> Title</h1>
 				<p className="mt-2">
 					Some descriptive text{" "}
-					<span className="text-orange">with an accent</span>
+					<span className="text-yellow-500">with an accent</span>
 				</p>
 			</div>
 			{/* Rectangle Ladder Shape Overlay */}
-			<div className="absolute top-0 left-0 w-full opacity-45 h-full 
-			 bg-gradient-to-r from-green-300 to-slate-100
-			 flex flex-col justify-center items-center"></div>
-		</div>
+			<div className="overlay absolute top-0 left-0 w-full opacity-60 h-full z-10"
+			//  bg-gradient-to-r from-green-300 to-slate-100
+			//  flex flex-col justify-center items-center"
+			 ></div>
+
+			{/* CAROUSEL */}
+
+			<Carousel
+				plugins={[
+					plugin.current
+				]} 
+				className="absolute top-0 left-0 w-screen h-full"
+				>
+				<CarouselContent className=" w-full h-full" >
+					{carouselHeroes.map(({id, img_url})=> (
+						<CarouselItem key={id} className={'w-screen h-[80vh] bg-[url('+img_url +')] bg-cover bg-center' }></CarouselItem>
+					))}
+				</CarouselContent>
+				<CarouselPrevious className="absolute top-1/2 right-1/2 -translate-x-[-100px] z-30 "/>
+				<CarouselNext className="absolute top-1/2 right-1/2 -translate-x-[-50px] z-30"/>
+			</Carousel>
+		</div >
 
 		// CHOICE 2
 		// <div className="relative bg-gradient-to-r from-purple-600 to-blue-600 h-screen text-white overflow-hidden w-full h-screen">

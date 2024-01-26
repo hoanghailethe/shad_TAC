@@ -11,6 +11,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+import { cn } from '@/lib/utils'
+
+
+
 const Nav = () => {
 	const [nav, setNav] = useState(false);
 
@@ -37,17 +41,16 @@ const Nav = () => {
 		},
 	];
 
-	console.log(links);
 
 	return (
-		<nav className="padding flex justify-between text-orange">
+		<nav className="padding flex justify-between text-white bg-primary">
 			<div className=""> TACCOM </div>
 			{/* https://dev.to/ryaddev/creating-a-responsive-navbar-using-nextjs-and-tailwind-css-48kk */}
 			<NavigationMenu className="hidden md:flex">
 				<NavigationMenuList>
 					{links.map(({ id, link }) => (
 						<Link key={id} href="/" legacyBehavior passHref>
-							<NavigationMenuLink className={navigationMenuTriggerStyle()}>
+							<NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-primary")}>
 								{link}
 							</NavigationMenuLink>
 						</Link>

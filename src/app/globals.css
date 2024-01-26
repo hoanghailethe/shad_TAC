@@ -99,7 +99,7 @@
 
 @layer utilities {
   .padding {
-    @apply sm:px-12 px-8 sm:py-12 py-8;
+    @apply sm:px-10 px-8 sm:py-10 py-8;
   }
 
   .padding-x {
@@ -132,5 +132,10 @@
 
   .text-slate-gray{
     @apply text-black
+  }
+
+  /* bg-[rgba(57, 57, 57, 0.5)] */
+  .overlay{
+    @apply inset-0 bg-gray-700 bg-opacity-50
   }
 }
