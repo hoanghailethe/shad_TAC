@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Card, CardBody } from "@material-tailwind/react";
+import { Card , CardContent } from "./ui/card";
 
 interface CategoryCardProps {
   img: string;
@@ -20,7 +20,7 @@ function CategoryCard({ img, title, desc, icon: Icon }: CategoryCardProps) {
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
       <div className="absolute inset-0 h-full w-full bg-black/70" />
-      <CardBody className="relative flex flex-col justify-between">
+      <CardContent className="relative flex flex-col justify-between">
         <Icon className="h-8 w-8 text-white" />
         <div>
           <h5 className="mb-1 text-white" color="white">
@@ -30,7 +30,7 @@ function CategoryCard({ img, title, desc, icon: Icon }: CategoryCardProps) {
             {desc}
           </span>
         </div>
-      </CardBody>
+      </CardContent>
     </Card>
   );
 }

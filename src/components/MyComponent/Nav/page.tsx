@@ -61,7 +61,7 @@ const Nav = () => {
 			{/* hambuger btn */}
 			<div
 				onClick={() => setNav(!nav)}
-				className="cursor-pointer pr-4 z-30 text-gray-500 md:hidden text-red-500"
+				className="cursor-pointer pr-4 z-40 text-gray-500 md:hidden text-red-500"
 			>
 				{nav ? <FaTimes size={30} /> : <FaBars size={30} />}
 			</div>
@@ -69,7 +69,7 @@ const Nav = () => {
 			{nav && (
 				<ul
 					className="flex flex-col justify-center items-center absolute top-0 left-0 
-                    z-20
+                    z-30
                     w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500"
 				>
 					{links.map(({ id, link }) => (

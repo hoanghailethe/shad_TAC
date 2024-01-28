@@ -41,7 +41,7 @@ const HeroCarousel = () => {
 			{/* Background Image Carousel (You'll need to implement this logic separately) */}
 			{/* Example: <div id="carousel" className="carousel"> ... </div> */}
 			{/* Text Overlaid on Top */}
-			<div className="text-white text-center padding md:pl-200 md:ml-[200px] z-20">
+			<div className="text-white text-center padding md:pl-200 md:ml-[200pxmmit] z-20 lg:pl-[500px]">
 				<h1 className="text-4xl font-bold "> Title</h1>
 				<p className="mt-2">
 					Some descriptive text{" "}
@@ -67,8 +67,8 @@ const HeroCarousel = () => {
 						<CarouselItem key={id} className={'w-screen h-[80vh] bg-[url('+img_url +')] bg-cover bg-center' }></CarouselItem>
 					))}
 				</CarouselContent>
-				<CarouselPrevious className="absolute top-1/2 right-1/2 -translate-x-[-100px] z-30 "/>
-				<CarouselNext className="absolute top-1/2 right-1/2 -translate-x-[-50px] z-30"/>
+				<CarouselPrevious className="absolute top-1/2 right-1/2 -translate-x-[-100px] z-20 "/>
+				<CarouselNext className="absolute top-1/2 right-1/2 -translate-x-[-50px] z-20"/>
 			</Carousel>
 		</div >
 

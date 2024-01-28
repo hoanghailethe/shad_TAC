@@ -1,5 +1,6 @@
 import HeroCarousel from "@/components/MyComponent/HeroCarousel/page"
 import OutImpressiveStats from"./OutImpressiveStats" 
+import ServicesCategories from "./ServicesCategories"
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <OutImpressiveStats />
 
       {/* PRODUCTS and SERVICES  */}
-      <ServiceCategories />
+      <ServicesCategories />
       
       {/* AWARDS  and TEAM   */}
 

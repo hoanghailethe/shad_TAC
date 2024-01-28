@@ -1,11 +1,8 @@
 "use client";
 
 import React from "react";
-import {
-  Button,
-  Card,
-  CardBody,
-} from "@material-tailwind/react";
+import { Button } from "@/components/ui/button";
+
 
 import {
   FaGlobeEurope ,
@@ -15,6 +12,7 @@ import {
 } from "react-icons/fa";
 
 import CategoryCard from "@/components/category-card";
+import { Card, CardContent } from "@/components/ui/card";
 
 
 const CATEGORIES = [
@@ -44,11 +42,11 @@ const CATEGORIES = [
   },
 ];
 
-export function ServicesCategories() {
+const ServicesCategories= () => {
   return (
     <section className="container mx-auto px-8 py-36">
       <div className="mb-20 grid place-items-center text-center">
-        <h2 color="blue-gray" className="my-3">
+        <h2 className="my-3 text-blue-500 text-4xl">
           Courses Categories
         </h2>
         <h3 className="!text-gray-500 lg:w-6/12">
@@ -62,7 +60,7 @@ export function ServicesCategories() {
           className="relative grid h-full w-full place-items-center overflow-hidden text-center"
         >
           <div className="absolute inset-0 h-full w-full bg-gray-900/75" />
-          <CardBody className="relative w-full">
+          <CardContent className="relative w-full">
             <span className="text-white text-xs font-bold opacity-50">
               HTML, CSS & Javascript
             </span>
@@ -78,7 +76,7 @@ export function ServicesCategories() {
             <Button size="sm" color="white">
               Enroll Now
             </Button>
-          </CardBody>
+          </CardContent>
         </Card>
         <div className="col-span-1 flex flex-col gap-6">
           {CATEGORIES.slice(0, 2).map((props, key) => (
